@@ -1,0 +1,36 @@
+services:
+  wp-acf-cpt:
+    build: .
+    container_name: wp-acf-cpt
+    restart: unless-stopped
+    ports:
+      - "8181:80"
+    env_file:
+      - .env
+    volumes:
+      # Persistent WordPress content
+      - uploads:/var/www/html/wp-content/uploads
+      - plugins:/var/www/html/wp-content/plugins
+      - themes:/var/www/html/wp-content/themes
+      # Mount init script so it can be updated without rebuilding
+      - ./init.sh:/init.sh:ro
+    depends_on:
+      - wpdb
+    # command: bash -c "chmod +x /init.sh && /init.sh && apache2-foreground"
+
+  wpdb:
+    image: mysql:5.7
+    container_name: wpdb
+    restart: always
+    env_file:
+      - .env
+    volumes:
+      - db_dataa:/var/lib/mysql
+    ports:
+      - "3308:3306"
+
+volumes:
+  uploads:
+  plugins:
+  themes:
+  db_dataa:
