@@ -37,7 +37,7 @@ if [ ! -f wp-config.php ]; then
   echo "⚙️ Creating wp-config.php..."
   wp config create \
     --dbname="$MYSQL_DATABASE" \
-    --dbuser="$MYSQL_USER" \
+    --dbuser="root" \
     --dbpass="$MYSQL_ROOT_PASSWORD" \
     --dbhost="$WORDPRESS_DB_HOST" \
     --skip-check \
@@ -48,6 +48,10 @@ if [ ! -f wp-config.php ]; then
  */
 define('FS_METHOD', 'direct'); // Avoid FTP prompt when installing plugins/themes
 
+// Set HTTP_HOST fallback when running from CLI
+if (php_sapi_name() === 'cli') {
+    $_SERVER['HTTP_HOST'] = $_SERVER['HTTP_HOST'] ?? 'localhost';
+}
 PHP
 
 else
