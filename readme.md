@@ -32,15 +32,16 @@ Edit the .env file to set your desired environment variables, such as database c
 ```bash
 docker-compose up --build
 ```
-### Note: For Windows, Do this
-
-- Remove file Dockerfile, because it for Mac/Linux
-- Rename file Dockerfile.windows to Dockerfile
-- Update init.sh file from CRLF to LF via Text Editor (Visual Studio Code or Notepad or Text Editor you always use)
 
 This command will:
 - Build the Docker images as defined in the Dockerfile.
 - Start the containers as per the configuration in docker-compose.yml.
+
+Note: For Windows, Do this
+
+- Remove file Dockerfile, because it for Mac/Linux
+- Rename file Dockerfile.windows to Dockerfile
+- Update init.sh file from CRLF to LF via Text Editor (Visual Studio Code or Notepad or Text Editor you always use)
 
 ### Access WordPress
 
