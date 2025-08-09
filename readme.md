@@ -16,3 +16,25 @@ Ensure you have the following installed:
 ```bash
 git clone https://github.com/therizdhan/wordpress-acf-cpt.git
 cd wordpress-acf-cpt
+```
+
+### Configure Environment Variables
+
+Copy the example environment file:
+```bash
+cp .env-example .env
+```
+
+Edit the .env file to set your desired environment variables, such as database credentials and site information.
+
+### Build and Start the Containers
+
+```bash
+docker-compose up --build
+```
+
+This command will:
+
+    Build the Docker images as defined in the Dockerfile.
+
+    Start the containers as per the configuration in docker-compose.yml.
