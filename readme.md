@@ -17,8 +17,8 @@ Ensure you have the following installed:
 To manually install WordPress and its dependencies, you'll need the following:
 
 1. **Web Server**: Apache or Nginx
-2. **PHP**: PHP 7.4 or higher
-3. **MySQL**: MySQL 5.6 or higher
+2. **PHP**: PHP 8.3 or higher
+3. **MySQL**: MySQL 8.0 or higher
 4. **WordPress**: The latest version of WordPress
 5. **Additional PHP Extensions**: `zip`, `gd`, `mbstring`, `mysqli`, etc.
 
