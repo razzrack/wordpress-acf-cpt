@@ -1,1 +1,63 @@
-Welcome to this repository
+WordPress with ACF & CPT via Docker
+
+This repository provides a Dockerized WordPress setup integrated with Advanced Custom Fields (ACF) and Custom Post Types (CPT). It's designed for developers seeking a streamlined local development environment for WordPress projects.
+🚀 Getting Started
+Prerequisites
+
+Ensure you have the following installed:
+- Docker
+- Docker Compose
+
+Clone the Repository
+
+git clone https://github.com/therizdhan/wordpress-acf-cpt.git
+cd wordpress-acf-cpt
+
+Configure Environment Variables
+
+Copy the example environment file:
+
+cp .env-example .env
+
+Edit the .env file to set your desired environment variables, such as database credentials and site information.
+Build and Start the Containers
+
+docker-compose up --build
+
+This command will:
+
+    Build the Docker images as defined in the Dockerfile.
+
+    Start the containers as per the configuration in docker-compose.yml.
+
+Access WordPress
+
+Once the containers are up and running, you can access your WordPress site at:
+
+http://localhost:8000
+
+🔧 Features
+
+    WordPress Setup: A ready-to-use WordPress installation.
+
+    ACF Integration: Advanced Custom Fields plugin pre-installed for enhanced content management.
+
+    CPT Support: Custom Post Types configured for flexible content structures.
+
+    Initialization Script: An init.sh script that:
+
+        Waits for the MySQL database to be ready.
+
+        Creates the database if it doesn't exist.
+
+        Sets appropriate permissions for the wp-content directory.
+
+        Generates the wp-config.php file with necessary configurations.
+
+        Installs WordPress if not already installed.
+
+🛠 Customization
+
+    Custom Post Types (CPT): Define your custom post types in the functions.php file or via the ACF interface.
+
+    ACF Fields: Create and manage custom fields through the WordPress admin panel under the ACF menu.
