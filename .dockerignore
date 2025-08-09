@@ -1,0 +1,42 @@
+# Ignore the Dockerfile itself (if not needed in the final image)
+Dockerfile
+
+# Ignore Docker Compose file (if not needed in the image)
+docker-compose.yml
+
+# Ignore the .git directory
+.git
+
+# Ignore node_modules (if using Node.js in your workflow)
+node_modules
+
+# Ignore WordPress core files and content not needed in the image (e.g., development tools, tests)
+wp-content/plugins/wordpress-importer
+# wp-content/themes/twenty*
+
+# Ignore sensitive configuration files (e.g., local config files, credentials)
+# wp-config.php
+# wp-config-local.php
+# .env
+
+# Ignore backup or temporary files
+*.bak
+*.swp
+*.swo
+
+# Ignore OS-specific files
+.DS_Store
+Thumbs.db
+
+# Ignore IDE or editor files
+.vscode/
+.idea/
+
+# Ignore build artifacts or caches
+*.log
+*.cache
+*.tmp
+
+# Ignore WordPress upgrade or install files
+wp-admin/install.php
+wp-admin/upgrade.php

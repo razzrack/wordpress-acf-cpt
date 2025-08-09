@@ -10,6 +10,7 @@ RUN apt-get update && apt-get install -y \
     unzip \
     zip \
     default-mysql-client \
+    dos2unix \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install gd zip
 

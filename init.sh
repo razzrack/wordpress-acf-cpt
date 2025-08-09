@@ -1,6 +1,3 @@
-#!/bin/bash
-set -e
-
 # Display the script
 echo "🕒 Waiting for DB to be ready..."
 # Extract host and port from WORDPRESS_DB_HOST
@@ -31,14 +28,15 @@ mkdir -p wp-content/{uploads,plugins,themes}
 echo "🔧 Fixing permissions..."
 chown -R www-data:www-data wp-content/{uploads,plugins,themes}
 chmod -R 775 wp-content/{uploads,plugins,themes}
+echo 
 
 # ⚙️ Create wp-config.php if missing
 if [ ! -f wp-config.php ]; then
   echo "⚙️ Creating wp-config.php..."
   wp config create \
     --dbname="$MYSQL_DATABASE" \
-    --dbuser="root" \
-    --dbpass="$MYSQL_ROOT_PASSWORD" \
+    --dbuser="$MYSQL_USER" \
+    --dbpass="$MYSQL_PASSWORD" \
     --dbhost="$WORDPRESS_DB_HOST" \
     --skip-check \
     --allow-root \
